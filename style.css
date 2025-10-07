@@ -1,0 +1,107 @@
+/* Load your own custom font */
+@font-face {
+  font-family: "MyFont"; /* 👈 Change this name to your font name */
+  src: url("font/Berlin-j9029.ttf") format("truetype"); /* 👈 Update path if needed */
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "MyFont", sans-serif; /* 👈 Apply your font globally */
+}
+
+/* Background Image */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.4);
+  z-index: -1;
+}
+
+/* Content Container */
+.content {
+  padding: 80px 10%;
+  color: white;
+  text-align: center;
+}
+
+/* Header */
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.description {
+  font-size: 1rem;
+  margin-bottom: 60px;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+/* Video Gallery - 1x1 Layout */
+.video-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px; /* space between each video */
+}
+
+/* Each Video Item */
+.video-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 800px; /* controls how wide each video can go */
+}
+
+.video-item:hover {
+  transform: scale(1.03);
+}
+
+/* Video Player */
+video {
+  width: 100%;
+  border-radius: 10px;
+  outline: none;
+}
+
+/* Video Titles and Descriptions */
+.video-title {
+  font-size: 1.5rem;
+  margin-top: 15px;
+  letter-spacing: 1px;
+}
+
+.video-description {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .content {
+    padding: 60px 5%;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .video-item {
+    max-width: 100%;
+  }
+}
